@@ -40,7 +40,7 @@ const Dashboard = () => {
    
           {posts && posts.map((post) => <div key={post.id} className={style.post_row}>
                                 <p>{post.title}</p>
-                                <div>
+                                <div className={style.containerButns}>
                                   <Link to = {`/posts/${post.id}`} className= "btn btn-outline">
                                     Ver
                                   </Link>

@@ -1,26 +1,47 @@
-.post_container{
+.post_container {
     text-align: center;
-    
+    padding: 0 1em; 
 }
 
-.post_container img{
-    max-width: 600px;
+.post_container img {
+    max-width: 100%; /* ocupa toda a largura disponível */
+    height: auto;    /* mantém a proporção */
 }
 
-.post_container h3{
-    margin-bottom: .2em;
+.post_container h3 {
+    margin-bottom: 0.2em;
+    font-size: 1.2rem; /* tamanho ajustável em telas menores */
 }
 
-.post_container .tags{
+.post_container .tags {
     display: flex;
     justify-content: center;
-
+    flex-wrap: wrap; /* permite que as tags quebrem linha em telas pequenas */
+    gap: 0.5em; /* espaçamento entre as tags */
 }
 
-.tags p{
+.tags p {
     margin-right: 1em;
+    font-size: 0.9rem; /* reduz um pouco o texto em telas pequenas */
 }
 
-.tags span{
+.tags span {
     font-weight: bold;
+}
+
+/* MEDIA QUERY PARA TELAS PEQUENAS */
+@media (max-width: 768px) {
+    .post_container h3 {
+        font-size: 1rem;
+    }
+
+    .tags p {
+        margin-right: 0.5em;
+        font-size: 0.85rem;
+    }
+
+    .post_container img {
+        max-width: 100%;
+        
+    }
 }

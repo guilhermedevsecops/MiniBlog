@@ -1,4 +1,23 @@
-.container{
+.container {
   min-height: 60vh;
-  margin-bottom:5em;
+  margin-bottom: 5em;
+  padding: 1em; /* opcional, para não encostar nas bordas */
+}
+
+/* Para telas menores que 768px (tablet/móvel) */
+@media (max-width: 768px) {
+  .container {
+    min-height: 40vh;    /* altura menor */
+    margin-bottom: 3em;  /* menos espaço embaixo */
+    padding: 0.5em;      /* padding menor */
+  }
+}
+
+/* Para telas menores que 480px (celular) */
+@media (max-width: 480px) {
+  .container {
+    min-height: 30vh;
+    margin-bottom: 2em;
+    padding: 0.5em;
+  }
 }

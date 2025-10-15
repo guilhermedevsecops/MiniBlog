@@ -57,7 +57,8 @@ export const useAuthentication = () =>{
             } else if (error.message.includes("email-already")){
                 systemErrorMessage = "Por favor escolha outro email."
             }else{
-                systemErrorMessage = "Ocorreu um erro por favor tente mais tarde"
+                systemErrorMessage = "Aqui Ocorreu um erro por favor tente mais tarde"
+                console.log(error) 
             }
 
             setLoading(false)

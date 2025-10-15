@@ -4,9 +4,8 @@
     justify-content: space-between;
     align-items: center;
     padding: .5em 2em;
+    flex-wrap: wrap; /* permite quebrar em linhas pequenas */
 }
-
-
 
 .brand{
     font-size:1.2em;
@@ -21,14 +20,72 @@
     display: flex;
     list-style: none;
     margin-right: 1em;
+    flex-wrap: wrap; /* quebra os links se não couber */
 }
 
 .links_list li a{
-    padding: .4em .6em
+    padding: .4em .6em;
+    font-size: 1em;
 }
 
+/* Link ativo */
 .active {
     background-color: #000;
-    color: #fff
-  }
+    color: #fff;
+}
 
+/* ----------------- Responsividade ----------------- */
+
+/* Tablets / telas médias */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: .5em 1.5em;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .brand {
+        font-size: 1.1em;
+    }
+
+    .links_list li a {
+        padding: .3em .5em;
+        font-size: 0.95em;
+    }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+    .navbar {
+          /* coloca brand em cima e links abaixo */
+        align-items: flex-start;
+        padding: .5em 1em;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .links_list {
+        width: 100%;
+        gap: 1rem;
+        margin-top: 8px;
+    }
+
+    .links_list li a {
+        gap: 6rem;
+        padding: .5em 0;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 480px) {
+    .brand {
+        font-size: 1em;
+    }
+
+    .links_list li a {
+        font-size: 0.9em;
+        padding: .4em 0;
+    }
+}

@@ -1,31 +1,87 @@
-.home{
+.home {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center;       /* centraliza horizontalmente */
+    justify-content: center;   /* centraliza verticalmente */
+    min-height: 100vh;         /* ocupa toda a altura da tela */
+    padding: 0 1em;            /* evita encostar nas bordas em telas pequenas */
+    box-sizing: border-box;    /* inclui padding no cálculo de largura */
+    text-align: center;        /* centraliza texto dentro de elementos */
 }
 
-.search_form{
+.search_form {
     max-width: 100%;
     width: 60%;
     display: flex;
     justify-content: center;
     margin-bottom: 2em;
+    flex-wrap: wrap; /* permite quebrar linha em telas pequenas */
 }
 
-.search_form input{
+.search_form input {
     margin-right: 10px;
     width: 50%;
+    min-width: 150px; /* garante que o input não fique muito pequeno */
+    padding: 0.5em;
 }
 
-.noposts{
+.search_form button {
+    padding: 0.5em 1em;
+    min-width: 100px;
+}
+
+.noposts {
     text-align: center;
+    margin-top: 1em;
 }
 
-.noposts p{
+.noposts p {
     margin-bottom: 1.5em;
+    font-size: 1rem;
 }
 
 .noposts a {
     padding: 10px 25px;
+    font-size: 0.95rem;
+}
+
+/* MEDIA QUERY PARA TABLETS */
+@media (max-width: 1024px) {
+    .search_form {
+        width: 80%;
+    }
+
+    .search_form input {
+        width: 60%;
+        margin-bottom: 0.5em;
+        margin-right: 0;
+    }
+}
+
+/* MEDIA QUERY PARA CELULARES */
+@media (max-width: 768px) {
+    .search_form {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search_form input {
+        width: 90%;
+        margin-right: 0;
+        margin-bottom: 0.5em;
+    }
+
+    .search_form button {
+        width: 50%;
+    }
+
+    .noposts p {
+        font-size: 0.9rem;
+    }
+
+    .noposts a {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+    }
 }

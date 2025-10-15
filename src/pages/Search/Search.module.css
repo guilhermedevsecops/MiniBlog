@@ -3,17 +3,48 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0 1em; /* garante espaçamento lateral em telas pequenas */
+    text-align: center;
 }
 
-
-.search_container h1{
+.search_container h1 {
     margin-bottom: 1em;
+    font-size: 2rem; /* tamanho padrão */
 }
 
-.search_container p{
+.search_container p {
     margin-bottom: 30px;
+    font-size: 1rem; /* tamanho padrão */
 }
 
-.noposts{
+.noposts {
     margin-top: 30px;
+    font-size: 1rem;
+}
+
+/* MEDIA QUERY PARA TELAS MÉDIAS */
+@media (max-width: 1024px) {
+    .search_container h1 {
+        font-size: 1.8rem;
+    }
+
+    .search_container p {
+        font-size: 0.95rem;
+    }
+}
+
+/* MEDIA QUERY PARA CELULARES */
+@media (max-width: 768px) {
+    .search_container h1 {
+        font-size: 1.5rem;
+    }
+
+    .search_container p {
+        font-size: 0.9rem;
+    }
+
+    .noposts {
+        font-size: 0.9rem;
+        margin-top: 20px;
+    }
 }

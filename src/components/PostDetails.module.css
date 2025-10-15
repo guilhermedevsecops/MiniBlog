@@ -1,33 +1,98 @@
-.post_detail{
+.post_detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 2em;
+    padding: 0 1em; /* espaçamento interno nas telas pequenas */
 }
 
-.post_detail img{
-    max-width: 600px;
-    
+.post_detail img {
+    width: 80%;          /* a largura ocupa 80% do container, se adapta */
+    max-width: 800px;    /* não ultrapassa 800px em telas grandes */
+    height: auto;        /* altura se ajusta proporcionalmente */
+    display: block;
+    margin-bottom: 1em;
 }
-
-.post_detail h2{
+.post_detail h2 {
     margin-bottom: .4em;
+    font-size: 1.5em; /* tamanho padrão */
 }
 
-.post_detail .tags{
+/* Tags */
+.post_detail .tags {
     margin-bottom: 1.2em;
     display: flex;
+    flex-wrap: wrap; /* quebra de linha se não couber */
 }
 
-.tags p{
+.tags p {
     margin-right: .5em;
+    margin-bottom: .3em; /* espaço vertical para mobile */
 }
 
 .tags span {
     font-weight: bold;
 }
 
-.createdby{
+/* Autor */
+.createdby {
     font-style: italic;
     color: #444;
     font-size: 0.8em;
     margin-bottom: 1em;
+}
 
+/* ----------------- Responsividade ----------------- */
+
+/* Tablets / telas médias */
+@media (max-width: 1024px) {
+    .post_detail h2 {
+        font-size: 1.3em;
+    }
+
+    .tags p {
+        margin-right: .4em;
+        font-size: 0.9em;
+    }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+    .post_detail h2 {
+        font-size: 1.2em;
+    }
+
+    .tags p {
+        font-size: 0.85em;
+    }
+
+    .createdby {
+        font-size: 0.75em;
+    }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 480px) {
+    .post_detail {
+        margin-bottom: 1.5em;
+    }
+
+    .post_detail h2 {
+        font-size: 1.1em;
+    }
+
+    .tags {
+        gap: 5px;
+        flex-direction: row; /* tags empilhadas */
+    }
+
+    .tags p {
+        margin-right: 0;
+        margin-bottom: 0.3em;
+    }
+
+    .createdby {
+        font-size: 0.7em;
+    }
 }
